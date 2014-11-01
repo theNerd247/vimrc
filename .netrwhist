@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/home/noah/.vim/bundle'
+let g:netrw_dirhist_2='/home/noah/.vim/bundle/UltiSnips'
+let g:netrw_dirhist_3='/home/noah/.vim/bundle/UltiSnips/UltiSnips'
+let g:netrw_dirhist_4='/home/noah/.xmonad'
+let g:netrw_dirhist_5='/home/noah/html'
+let g:netrw_dirhist_6='/home/noah/src/scripts'
+let g:netrw_dirhist_7='/var/log'
