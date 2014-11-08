@@ -7,19 +7,26 @@ call vundle#begin('~/.vim/vundle/')
 
 Plugin 'gmarik/Vundle.vim'
 
-" Installed plugins 
-Plugin 'vim-scripts/AutoComplPop'
+"--INSTALLED PLUGINS ---------------------------------
+Plugin 'vim-scripts/autocomplpop'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'rstacruz/sparkup'
 Plugin 'vim-scripts/UltiSnips'
 Plugin 'sheerun/vim-polyglot'
-
+Plugin 'xolox/vim-easytags'
+Plugin 'xolox/vim-misc'
+Plugin 'bling/vim-airline'
+Plugin 'OmniCppComplete'
+Plugin 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX'
+Plugin 'scrooloose/syntastic'
+Plugin 'majutsuchi/tagbar'
+Plugin 'tpope/vim-fugitive'
+"-- END INSTALLED PLUGINS --------------------------
 
 call vundle#end()
 filetype plugin indent on  
-
 
 "--CUSTOM KEY MAPPINGS------------------------------
 " set map leader for custom key-maps
@@ -30,7 +37,7 @@ nmap <leader>w :w<cr>
 " edit the vimrc file
 nmap <leader>s :split ~/.vimrc<cr>
 "edit Ultisnips 
-nmap <leader>su :split ~/.vim/bundle/UltiSnips/UltiSnips/<cr>
+nmap <leader>su :split ~/.vim/vundle/UltiSnips/UltiSnips/ <cr>
 " comment out the marked lines 'a,'b
 "nmap <leader><S-C> 'a^O/*<ESC>:'a,'bs/^/ * /<cr>'b^o */<ESC>:nohlsearch<cr>
 "comment out a single line
@@ -42,7 +49,7 @@ nmap <leader>su :split ~/.vim/bundle/UltiSnips/UltiSnips/<cr>
 " quit the file
 nmap <leader>q :q<cr>
 " unhighlight search results
-nmap <leader>/ :nohlsearch<cr>
+"nmap <leader>/ :nohlsearch<cr>
 " go to the tag of the word under the cursor
 nmap <leader>t :ptag <C-R><C-W><cr>
 " create ctags for the given file
@@ -63,11 +70,17 @@ nmap <C-n> :tabn <cr>
 nmap <leader>a :'a,'bs/^/\t/g <cr>
 " unindent a code block
 nmap <leader><S-A> :'a,'bs/^\t//g <cr>
-" setup our document for papers
-nmap <leader>p :set tw=0<cr>:set wrap<cr>:set spell<cr>
 " add copy/paste functions for clipboard
-nmap <leader><S-P> "+p
-nmap <leader><S-Y> "+y
+vmap <leader><S-P> "+p
+vmap <leader><S-Y> "+y
+" open nerdtree
+nmap <leader>n :NERDTree <cr>
+" open tagbar
+nmap <leader>/ :TagbarToggle <cr>
+" buffer controls
+nmap <leader>bn :bn<cr>
+nmap <leader>bp :bp<cr>
+nmap <leader>bd :bd<cr>
 " --END CUSTOM MAPPINGS----------------------------
 
 " for the pathogen plugin 
@@ -75,7 +88,9 @@ nmap <leader><S-Y> "+y
 "call pathogen#helptags()
 
 " Vimrc autoloading the vimrc file
-autocmd! bufwritepost ~/.vimrc source ~/.vimrc
+"autocmd! bufwritepost ~/.vimrc source ~/.vimrc
+
+let g:airline#extensions#tabline#enabled = 1
 
 "omnicomplete options
 set omnifunc=syntaxcomplete#Complete
@@ -128,3 +143,5 @@ set si
 set printoptions=top:1in,bottom:1in,left:0.5in,right:0.5in
 set printheader=" "
 set pdev = "BCMLaser"
+
+set nospell
