@@ -1,0 +1,13 @@
+% my long complicated macro. This is an example of how to set up a
+% tex-macro for latex-suite. simply type in the lines as you would in
+% latex. Place holders are allowed.
+% NOTE: if you have filetype indentation turned on, then do not do
+%       formatting here. the indentation will follow automatically...
+\begin{figure}[<+Hhtpb+>]
+\begin{center}
+\includegraphics[width=\linewidth]{<+filepath+>}
+\end{center}
+\caption{<+caption here+>}
+\label{<+fig+>:<+label+>}
+\end{figure}
+

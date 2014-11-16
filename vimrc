@@ -7,7 +7,7 @@ call vundle#begin('~/.vim/vundle/')
 
 Plugin 'gmarik/Vundle.vim'
 
-"--INSTALLED PLUGINS ---------------------------------
+"-- PLUGINS {{{ ------------------------------------------------------
 Plugin 'vim-scripts/autocomplpop'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Raimondi/delimitMate'
@@ -21,23 +21,32 @@ Plugin 'bling/vim-airline'
 Plugin 'OmniCppComplete'
 Plugin 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX'
 Plugin 'scrooloose/syntastic'
-Plugin 'majutsuchi/tagbar'
+Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-fugitive'
-"-- END INSTALLED PLUGINS --------------------------
+Plugin 'moll/vim-bbye'
+Plugin 'tpope/vim-surround'
+Plugin 'Command-T'
+"-- END PLUGINS }}} --------------------------------------------------
 
 call vundle#end()
 filetype plugin indent on  
 
-"--CUSTOM KEY MAPPINGS------------------------------
 " set map leader for custom key-maps
 let mapleader = "," 
 
+"-- CUSTOM MAPINGS {{{ -----------------------------------------------
+" format paragraph
+nnoremap <leader>fp gqap
+"format line 
+nnoremap <leader>fl gqas
 " write the file 
 nmap <leader>w :w<cr>
 " edit the vimrc file
-nmap <leader>s :split ~/.vimrc<cr>
+nmap <leader>se :tabnew ~/.vimrc<cr>
+" shortcut to help screen in new tab
+nmap <leader>h :tab help
 "edit Ultisnips 
-nmap <leader>su :split ~/.vim/vundle/UltiSnips/UltiSnips/ <cr>
+nmap <leader>su :tabnew ~/.vim/vundle/UltiSnips/UltiSnips/ <cr>
 " comment out the marked lines 'a,'b
 "nmap <leader><S-C> 'a^O/*<ESC>:'a,'bs/^/ * /<cr>'b^o */<ESC>:nohlsearch<cr>
 "comment out a single line
@@ -46,12 +55,15 @@ nmap <leader>su :split ~/.vim/vundle/UltiSnips/UltiSnips/ <cr>
 "nmap <leader>u<S-C> 'a-dd:'a,'bs/^ \* /<cr>'b+dd:nohlsearch<cr>
 "uncomment a single line
 "nmap <leader>uc :s/^\/\///<cr>:nohlsearch<cr>
-" quit the file
+" quit the file (by deleting the buffer)
 nmap <leader>q :q<cr>
 " unhighlight search results
 "nmap <leader>/ :nohlsearch<cr>
 " go to the tag of the word under the cursor
-nmap <leader>t :ptag <C-R><C-W><cr>
+"nmap <leader>t :ptag <C-R><C-W><cr>
+" tab management
+nmap <leader>tn :tabnew<cr>
+nmap <leader>td :tabclose<cr>
 " create ctags for the given file
 nmap <leader><S-T> :!ctags --options="$HOME/.ctagsrc" <cr>
 " set up the look up option for a word
@@ -71,27 +83,42 @@ nmap <leader>a :'a,'bs/^/\t/g <cr>
 " unindent a code block
 nmap <leader><S-A> :'a,'bs/^\t//g <cr>
 " add copy/paste functions for clipboard
-vmap <leader><S-P> "+p
+nmap <leader><S-P> "+p
 vmap <leader><S-Y> "+y
-" open nerdtree
-nmap <leader>n :NERDTree <cr>
-" open tagbar
-nmap <leader>/ :TagbarToggle <cr>
 " buffer controls
 nmap <leader>bn :bn<cr>
 nmap <leader>bp :bp<cr>
 nmap <leader>bd :bd<cr>
-" --END CUSTOM MAPPINGS----------------------------
+"-- END CUSTOM MAPINGS }}} -------------------------------------------
 
-" for the pathogen plugin 
-"call pathogen#infect()
-"call pathogen#helptags()
-
-" Vimrc autoloading the vimrc file
-"autocmd! bufwritepost ~/.vimrc source ~/.vimrc
-
+"-- PLUGIN CONFIG {{{ -------------------------------------------------
+" show buffers and tabs in airline plugin
 let g:airline#extensions#tabline#enabled = 1
 
+"CommandT mappings
+nnoremap <Leader>? :CommandT<CR>
+nnoremap <leader>~ :CommandT
+"nnoremap <silent> <Leader>b :CommandTBuffer<CR>
+
+"nerdtree mappings 
+nmap <leader>nn :NERDTreeToggle <cr>
+nnoremap <leader>nf :NERDTreeFind<cr>
+
+" tagbar mappings
+nmap <leader>/ :TagbarToggle <cr>
+
+" surround mappings (cause there's just aren't short enough)
+" surround a wored  
+nmap <leader>sw ysiw
+"-- END PLUGIN CONFIG }}} ---------------------------------------------
+
+"-- PRINTER {{{ ------------------------------------------------------
+set printoptions=top:1in,bottom:1in,left:0.5in,right:0.5in
+set printheader=" "
+set pdev = "BCMLaser"
+"-- END PRINTER }}} --------------------------------------------------
+
+"-- MISC {{{ ---------------------------------------------------------
 "omnicomplete options
 set omnifunc=syntaxcomplete#Complete
 set completeopt+=longest
@@ -119,7 +146,7 @@ set foldmethod=syntax
 
 " default tab size
 set tabstop=2
-set shiftwidth=2
+set shiftwidth=0
 
 " show tab
 set number
@@ -139,9 +166,6 @@ set mouse=
 " turn off smart indenting
 set si
 
-" printing options
-set printoptions=top:1in,bottom:1in,left:0.5in,right:0.5in
-set printheader=" "
-set pdev = "BCMLaser"
-
+" turn off spell check
 set nospell
+"-- END MISC }}} -----------------------------------------------------
