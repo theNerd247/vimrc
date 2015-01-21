@@ -1,10 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
-let g:netrw_dirhist_1='/home/noah/.vim/bundle'
-let g:netrw_dirhist_2='/home/noah/.vim/bundle/UltiSnips'
-let g:netrw_dirhist_3='/home/noah/.vim/bundle/UltiSnips/UltiSnips'
-let g:netrw_dirhist_4='/home/noah/.xmonad'
-let g:netrw_dirhist_5='/home/noah/html'
-let g:netrw_dirhist_6='/home/noah/src/scripts'
-let g:netrw_dirhist_7='/var/log'
-let g:netrw_dirhist_8='/home/noah/docs/college/class/mech/avrlab'
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/noah/.vim/ftplugin'
+let g:netrw_dirhist_2='/home/noah/.vim/ftplugin/latex-suite'
+let g:netrw_dirhist_3='/home/noah/.vim/ftplugin/latex-suite/macros'
+let g:netrw_dirhist_4='/home/noah/.vim/vundle/UltiSnips/UltiSnips'
