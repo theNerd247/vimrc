@@ -146,7 +146,7 @@ set foldmethod=syntax
 
 " default tab size
 set tabstop=2
-set shiftwidth=0
+set shiftwidth=2
 
 " show tab
 set number
