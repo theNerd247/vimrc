@@ -35,6 +35,8 @@ filetype plugin indent on
 let mapleader = "," 
 
 "-- CUSTOM MAPINGS {{{ -----------------------------------------------
+" edit filetype dependent commands
+nnoremap <leader>ss :tabnew ~/.vim/after/ftplugin/ <cr>
 " format paragraph
 nnoremap <leader>fp gqap
 "format line 
@@ -66,8 +68,8 @@ nmap <leader>tn :tabnew<cr>
 nmap <leader>td :tabclose<cr>
 " create ctags for the given file
 nmap <leader><S-T> :!ctags --options="$HOME/.ctagsrc" <cr>
-" set up the look up option for a word
-nmap <S-K> :!firefox https://duckduckgo.com/?q=<C-R><C-W> & <cr>
+" set up the look up option for a word (replaced by keywordprg setting)
+"nmap <S-K> :!firefox https://duckduckgo.com/?q=<C-R><C-W> & <cr>
 "insert tabs at the beginning of a line
 nmap <leader><Tab> :s/^/\t/ <cr>:nohlsearch <cr>
 "remove tabs at beginning of a line
@@ -84,6 +86,7 @@ nmap <leader>a :'a,'bs/^/\t/g <cr>
 nmap <leader><S-A> :'a,'bs/^\t//g <cr>
 " add copy/paste functions for clipboard
 nmap <leader><S-P> "+p
+inoremap <C-v> <esc>"+p
 vmap <leader><S-Y> "+y
 " buffer controls
 nmap <leader>bn :bn<cr>
@@ -92,12 +95,16 @@ nmap <leader>bd :bd<cr>
 "-- END CUSTOM MAPINGS }}} -------------------------------------------
 
 "-- PLUGIN CONFIG {{{ -------------------------------------------------
+" delimitMate mappings
+" alias for <S-Tab>
+imap <C-j> <S-Tab>
 " show buffers and tabs in airline plugin
 let g:airline#extensions#tabline#enabled = 1
 
 "CommandT mappings
-nnoremap <Leader>? :CommandT<CR>
+nnoremap <Leader>? :CommandTFlush<cr>:CommandT<cr>
 nnoremap <leader>~ :CommandT
+nnoremap <leader>tf :CommandTFlush<cr>
 "nnoremap <silent> <Leader>b :CommandTBuffer<CR>
 
 "nerdtree mappings 
@@ -107,15 +114,12 @@ nnoremap <leader>nf :NERDTreeFind<cr>
 " tagbar mappings
 nmap <leader>/ :TagbarToggle <cr>
 
-" surround mappings (cause there's just aren't short enough)
-" surround a wored  
-nmap <leader>sw ysiw
 "-- END PLUGIN CONFIG }}} ---------------------------------------------
 
 "-- PRINTER {{{ ------------------------------------------------------
 set printoptions=top:1in,bottom:1in,left:0.5in,right:0.5in
 set printheader=" "
-set pdev = "BCMLaser"
+set pdev=BCMLaser
 "-- END PRINTER }}} --------------------------------------------------
 
 "-- MISC {{{ ---------------------------------------------------------
@@ -168,4 +172,7 @@ set si
 
 " turn off spell check
 set nospell
+
+" set the program to use for the S-K mapping
+set keywordprg=firefox
 "-- END MISC }}} -----------------------------------------------------
