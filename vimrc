@@ -14,7 +14,7 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'rstacruz/sparkup'
 Plugin 'vim-scripts/UltiSnips'
-Plugin 'sheerun/vim-polyglot'
+"Plugin 'sheerun/vim-polyglot'
 Plugin 'xolox/vim-easytags'
 Plugin 'xolox/vim-misc'
 Plugin 'bling/vim-airline'
@@ -26,6 +26,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'moll/vim-bbye'
 Plugin 'tpope/vim-surround'
 Plugin 'Command-T'
+"Plugin 'octol/vim-cpp-enhanced-highlight'
 "-- END PLUGINS }}} --------------------------------------------------
 
 call vundle#end()
@@ -175,4 +176,8 @@ set nospell
 
 " set the program to use for the S-K mapping
 set keywordprg=firefox
+
+" sets the amount of lines to buffer from top and bottom of screen when I start
+" scrolling
+set scrolloff=10
 "-- END MISC }}} -----------------------------------------------------
