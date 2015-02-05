@@ -1,6 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_cnt =5
 let g:netrw_dirhist_1='/home/noah/.vim/ftplugin'
 let g:netrw_dirhist_2='/home/noah/.vim/ftplugin/latex-suite'
 let g:netrw_dirhist_3='/home/noah/.vim/ftplugin/latex-suite/macros'
 let g:netrw_dirhist_4='/home/noah/.vim/vundle/UltiSnips/UltiSnips'
+let g:netrw_dirhist_5='/home/nharvey7/gtri/AdvancedPerception2/common/Perception/CMakeFiles'

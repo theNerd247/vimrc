@@ -35,6 +35,12 @@ filetype plugin indent on
 let mapleader = "," 
 
 "-- CUSTOM MAPINGS {{{ -----------------------------------------------
+" fix indenting of a file (see :help =)
+nmap <leader>rf gg=G
+" vertical split
+nmap <leader>vs :vsp<CR>
+" horizontal split
+nmap <leader>hs :sp<CR>
 " edit filetype dependent commands
 nnoremap <leader>ss :tabnew ~/.vim/after/ftplugin/ <cr>
 " format paragraph
@@ -46,7 +52,7 @@ nmap <leader>w :w<cr>
 " edit the vimrc file
 nmap <leader>se :tabnew ~/.vimrc<cr>
 " shortcut to help screen in new tab
-nmap <leader>h :tab help
+nmap <leader>hh :tab help 
 "edit Ultisnips 
 nmap <leader>su :tabnew ~/.vim/vundle/UltiSnips/UltiSnips/ <cr>
 " comment out the marked lines 'a,'b
@@ -134,7 +140,8 @@ set mouse=a
 syntax enable
 
 " set custom colors
-colorscheme monokai
+colorscheme default
+set background=dark "if set to monokai then comment this out
 
 " show the commands as I type them
 set showcmd
@@ -155,9 +162,6 @@ set shiftwidth=2
 " show tab
 set number
 
-" I like to use a dark background 
-"set background=dark
-
 " set ctags path
 set tags+=/usr/include/tags
 
@@ -175,4 +179,8 @@ set nospell
 
 " set the program to use for the S-K mapping
 set keywordprg=firefox
+
+" set the number of lines to buffer the cursor with (above or below) when
+" scrolling
+set scrolloff=10
 "-- END MISC }}} -----------------------------------------------------

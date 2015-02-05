@@ -75,7 +75,8 @@ typedef ${1:int} ${2:MyCustomType};
 endsnippet
 
 snippet do "do...while loop (do)"
-do {
+do 
+{
 	${0:/* code */}
 }while(${1:/* condition */});
 endsnippet
@@ -170,16 +171,14 @@ snippet docln "creates a documentation block"  t
 /**< ${1:comment} */
 endsnippet
 
-snippet csehead "cse 1302 header" !b
-// Program Name:			`!v expand('%:t')`
-//Course:							CSE1302E/001
-//Student Name:				Noah Harvey
-//Assignment Number:	${1:assignment}
-//Due Date:						${2:<date>}  	
-/*Purpose:						${3:description}	*/	
-endsnippet
-
 snippet errln "inserts std error doc" t
 ${1:0}: ${2:no error}; ${3:1}: ${4:error occured}
+endsnippet
+
+snippet while "a while loop" t
+while(${1:/* condition */})
+{
+	$0
+}
 endsnippet
 # vim:ft=snippets:
