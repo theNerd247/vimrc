@@ -14,7 +14,7 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'rstacruz/sparkup'
 Plugin 'vim-scripts/UltiSnips'
-"Plugin 'sheerun/vim-polyglot'
+Plugin 'sheerun/vim-polyglot'
 Plugin 'xolox/vim-easytags'
 Plugin 'xolox/vim-misc'
 Plugin 'bling/vim-airline'
@@ -26,7 +26,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'moll/vim-bbye'
 Plugin 'tpope/vim-surround'
 Plugin 'Command-T'
-"Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'octol/vim-cpp-enhanced-highlight'
 "-- END PLUGINS }}} --------------------------------------------------
 
 call vundle#end()
@@ -36,6 +36,10 @@ filetype plugin indent on
 let mapleader = "," 
 
 "-- CUSTOM MAPINGS {{{ -----------------------------------------------
+" delete two spaces (used when tabs are converted into spaces)
+imap <C-K> <BS><BS>
+" fix the indenting on the file
+nmap <leader>rf gg=G
 " edit filetype dependent commands
 nnoremap <leader>ss :tabnew ~/.vim/after/ftplugin/ <cr>
 " format paragraph
@@ -47,7 +51,7 @@ nmap <leader>w :w<cr>
 " edit the vimrc file
 nmap <leader>se :tabnew ~/.vimrc<cr>
 " shortcut to help screen in new tab
-nmap <leader>h :tab help
+nmap <leader>hh :tab help 
 "edit Ultisnips 
 nmap <leader>su :tabnew ~/.vim/vundle/UltiSnips/UltiSnips/ <cr>
 " comment out the marked lines 'a,'b

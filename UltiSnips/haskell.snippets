@@ -1,13 +1,13 @@
 snippet if "if ... then ... else ..."
 if ${1:condition}
-   then ${2:expression}
-   else ${3:expression}
+	then ${2:expression}
+	else ${3:expression}
 endsnippet
 
 snippet case "case ... of ..."
 case ${1:expression} of
-     ${2:pattern} -> ${3:expression}
-     ${4:pattern} -> ${5:expression}
+	${2:pattern} -> ${3:expression}
+	${4:pattern} -> ${5:expression}
 endsnippet
 
 snippet :: "Type signature"
@@ -58,4 +58,26 @@ endsnippet
 snippet let "let ... in ..."
 let ${1:name} = ${2:expression}
 in ${3:expression}
+endsnippet
+
+snippet "da(ta)?" "data Type" tr
+data ${1:Type} ${2:a b c} = $1 $0
+endsnippet
+
+snippet "inst(ance)?" "class isntance" tr
+instance ${1:Class} ${2:Type} where
+	$0
+endsnippet
+
+snippet "mod(ule)?" "a new module" rt!b
+module ${1:Module Name} 
+(
+$0
+)
+where
+
+endsnippet
+
+snippet "imp(ort)?" "import statement" rt
+import ${1:qualified} ${2:Module}${1/qualified/as/g} 
 endsnippet
