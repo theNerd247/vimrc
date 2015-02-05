@@ -134,6 +134,12 @@ ${0}
 }
 endsnippet
 
+#snippet sec "insert section statements"
+#-- ${1:Text} `!p snip.rv = (64-len(t[1]))*'-'`
+#$0
+#-- END $1 `!p snip.rv = (60-len(t[1]))*'-'`
+#endsnippet
+
 snippet dt "fetches the date in yyyy-mm-dd" t
 `date +%D`
 endsnippet
