@@ -43,7 +43,7 @@ nmap <leader>vs :vsp<CR>
 " horizontal split
 nmap <leader>hs :sp<CR>
 " delete two spaces (used when tabs are converted into spaces)
-imap <C-K> <BS><BS>
+imap <C-S-K> <BS><BS>
 " edit filetype dependent commands
 nnoremap <leader>ss :tabnew ~/.vim/after/ftplugin/ <cr>
 " format paragraph

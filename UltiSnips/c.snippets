@@ -120,7 +120,8 @@ snippet func "creates new function and documentation"
  * 
  * ${7:details}
  *
- * ${3/([\w]+\*{0,1})\s\&{0,1}([\w]+)[\[.*\]]*,{0,1}/@param $2 - \n */g}
+ *${3/void|.*?([\w]*)(,|$)/(?1: @param $1 - \\n *:)/g}
+ *
  * @return $1 - ${5:description}
  * 
  */
