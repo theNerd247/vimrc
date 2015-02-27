@@ -103,6 +103,11 @@ nmap <leader>bp :bp<cr>
 nmap <leader>bd :bd<cr>
 "-- END CUSTOM MAPINGS }}} -------------------------------------------
 
+"-- CUSTOM MACROS {{{ ------------------------------------------------
+" format single line multiline c style comment to a multiline comment
+let @f='0f*wif*i€kb€kb'
+"-- END CUSTOM MACROS }}} --------------------------------------------
+
 "-- PLUGIN CONFIG {{{ -------------------------------------------------
 " delimitMate mappings
 " alias for <S-Tab>
