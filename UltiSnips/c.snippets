@@ -114,7 +114,7 @@ snippet author "/*author info*/"
  */
 endsnippet
 
-snippet func "creates new function and documentation"
+snippet func "creates new function and documentation" t
 /**
  * @brief ${6:a brief description}
  * 
@@ -158,7 +158,8 @@ snippet helper "creates helper func prototype" t
 /** 
  * @brief ${2:I help $1} 
  * 
- * ${5/([\w]+\*{0,1})\s\&{0,1}([\w]+)[\[.*\]]*,{0,1}/@param $2 - \n/g}
+ *${5/void|.*?([\w]*)(,|$)/(?1: @param $1 - \\n *:)/g}
+ *
  * @return $3
  */
 ${3:void} ${4:helper}(${5})${0}
