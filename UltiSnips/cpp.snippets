@@ -8,7 +8,7 @@ ${1:v}${1/^.*?(-)?(>)?$/(?2::(?1:>:.))/}begin(), $1${1/^.*?(-)?(>)?$/(?2::(?1:>:
 endsnippet
 
 snippet cl "class .. (class)" t
-class ${1:`!p snip.rv = snip.basename or "name"`}${2: : ${4:public} ${3:BaseClass}}
+class ${1:`!p snip.rv = snip.basename or "name"`}${3: : ${4:public} ${5:BaseClass}}
 {
 	public:
 		${1/(\w+).*/$1/}(${2:arguments}) {};
@@ -57,6 +57,10 @@ try
 catch(/* Exception e*/)
 {
 }
+endsnippet
+
+snippet template "templates" t
+template<typename ${1:t1}${2:,typename ${3:t2}}>
 endsnippet
 
 # vim:ft=snippets:
