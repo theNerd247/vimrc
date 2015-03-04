@@ -36,6 +36,8 @@ filetype plugin indent on
 let mapleader = "," 
 
 "-- CUSTOM MAPINGS {{{ -----------------------------------------------
+" the highlighted text with braces
+vmap <leader>b <esc>:'<,'>s/\%V\(\_.*\)\%V/{\r\1\r}/<cr>
 " fix indenting of a file (see :help =)
 nmap <leader>rf gg=G
 " vertical split
@@ -166,8 +168,9 @@ set foldmethod=syntax
 " default tab size
 set tabstop=2
 set shiftwidth=2
+set expandtab
 
-" show tab
+" show lines numbers
 set number
 
 " set ctags path
