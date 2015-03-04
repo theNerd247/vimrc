@@ -8,7 +8,13 @@ ${1:v}${1/^.*?(-)?(>)?$/(?2::(?1:>:.))/}begin(), $1${1/^.*?(-)?(>)?$/(?2::(?1:>:
 endsnippet
 
 snippet cl "class .. (class)" t
-class ${1:`!p snip.rv = snip.basename or "name"`}${3: : ${4:public} ${5:BaseClass}}
+/**
+ * @brief ${6:brief description}
+ *
+ * ${7:class details}
+ *
+ */
+class ${1:`!p snip.rv = snip.basename or "name"`} ${3:: ${4:public} ${5:ClassName}}
 {
 	public:
 		${1/(\w+).*/$1/}(${2:arguments}) {};

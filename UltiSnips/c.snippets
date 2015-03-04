@@ -56,10 +56,9 @@ endsnippet
 snippet once "Include header once only guard"
 #ifndef ${1:`!p
 if not snip.c:
-	import random, string
+	import string
 	name = re.sub(r'[^A-Za-z0-9]+','_', snip.fn).upper()
-	rand = ''.join(random.sample(string.ascii_letters+string.digits, 8))
-	snip.rv = ('%s_%s' % (name,rand)).upper()
+	snip.rv = ('%s' % name).upper()
 else:
     snip.rv = snip.c`}
 #define $1
@@ -182,5 +181,13 @@ while(${1:/* condition */})
 {
 	$0
 }
+endsnippet
+
+snippet tblk "a testing block" t!b
+#ifdef ${1:__testing}
+	${2:/* testing dummy code here */}
+#else
+	${0:/* real code here */}
+#endif
 endsnippet
 # vim:ft=snippets:
