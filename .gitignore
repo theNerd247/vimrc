@@ -1,2 +1,4 @@
 *.sw*
 vundle/
+tags
+.netrwhist

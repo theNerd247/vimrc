@@ -36,6 +36,10 @@ filetype plugin indent on
 let mapleader = "," 
 
 "-- CUSTOM MAPINGS {{{ -----------------------------------------------
+" center current line on screen
+nmap <space> zz
+" run make
+nmap <leader>m :make<cr>
 " the highlighted text with braces
 vmap <leader>b <esc>:'<,'>s/\%V\(\_.*\)\%V/{\r\1\r}/<cr>
 " fix indenting of a file (see :help =)
@@ -45,7 +49,7 @@ nmap <leader>vs :vsp<CR>
 " horizontal split
 nmap <leader>hs :sp<CR>
 " delete two spaces (used when tabs are converted into spaces)
-imap <C-S-K> <BS><BS>
+" imap <C-S-K> <BS><BS> (use softtabs instead)
 " edit filetype dependent commands
 nnoremap <leader>ss :tabnew ~/.vim/after/ftplugin/ <cr>
 " format paragraph
@@ -130,6 +134,16 @@ nnoremap <leader>nf :NERDTreeFind<cr>
 " tagbar mappings
 nmap <leader>/ :TagbarToggle <cr>
 
+" recurse into directories for tags
+let g:easytags_autorecurse = 0
+" run easytags in the background
+let g:easytags_async=1
+let g:easytags_auto_update=0
+" put our easytags file somewhere non intrusive
+let g:easytags_file='~/.vim/tags'
+" use the tags files that are project specific
+set tags=.tags,./.tags,./tags,tags
+let g:easytags_dynamic_files=2
 "-- END PLUGIN CONFIG }}} ---------------------------------------------
 
 "-- PRINTER {{{ ------------------------------------------------------
@@ -168,6 +182,7 @@ set foldmethod=syntax
 " default tab size
 set tabstop=2
 set shiftwidth=2
+set softtabstop=2
 set expandtab
 
 " show lines numbers
