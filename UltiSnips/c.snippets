@@ -102,7 +102,7 @@ struct ${1:/* struct name */}
 };
 endsnippet
 
-snippet author "/*author info*/"
+snippet file "/*author info*/"
 /**
  * @file `!v expand('%:t')` 
  *
@@ -165,7 +165,9 @@ ${3:void} ${4:helper}(${5})${0}
 endsnippet
 
 snippet docl "creates a documentation block"  t
-/* ${1:comment} */
+/** 
+ * ${1:comment} 
+ */
 endsnippet
 
 snippet docln "creates a documentation block"  t

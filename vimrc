@@ -27,6 +27,7 @@ Plugin 'moll/vim-bbye'
 Plugin 'tpope/vim-surround'
 Plugin 'Command-T'
 Plugin 'octol/vim-cpp-enhanced-highlight'
+"Plugin 'bitc/vim-hdevtools'
 "-- END PLUGINS }}} --------------------------------------------------
 
 call vundle#end()
@@ -36,8 +37,10 @@ filetype plugin indent on
 let mapleader = "," 
 
 "-- CUSTOM MAPINGS {{{ -----------------------------------------------
+" open a newterminal
+nmap <leader>nt :!newterm<cr><cr>
 " fix indenting of a file (see :help =)
-nmap <leader>rf gg=G
+nmap <leader>rf gg=G <C-o><C-o>
 " vertical split
 nmap <leader>vs :vsp<CR>
 " horizontal split
@@ -125,8 +128,12 @@ nnoremap <leader>tf :CommandTFlush<cr>
 nmap <leader>nn :NERDTreeToggle <cr>
 nnoremap <leader>nf :NERDTreeFind<cr>
 
+"easytags 
+let g:easytags_auto_update=0
+
 " tagbar mappings
-nmap <leader>/ :TagbarToggle <cr>
+nmap <leader>// :TagbarToggle <cr>
+nmap <leader>/p :TagbarTogglePause <cr>
 
 "-- END PLUGIN CONFIG }}} ---------------------------------------------
 
