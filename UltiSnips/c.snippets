@@ -120,9 +120,8 @@ snippet func "creates new function and documentation" t
  * ${7:details}
  *
  *${3/void|.*?([\w]*)(,|$)/(?1: @param $1 - \\n *:)/g}
+ * ${1/void|(.*)/(?1:@return $1 - :)/g}
  *
- * @return $1 - ${5:description}
- * 
  */
 ${0}${1:void} ${2:func_name}(${3:void});
 endsnippet

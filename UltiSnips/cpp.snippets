@@ -58,10 +58,11 @@ endsnippet
 snippet try "a try catch statement" t
 try
 {
-	$0	
+	${1://code here}
 }
-catch(/* Exception e*/)
+catch(${2:...})
 {
+	${0://code here}
 }
 endsnippet
 
