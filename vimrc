@@ -20,7 +20,7 @@ Plugin 'xolox/vim-misc'
 Plugin 'bling/vim-airline'
 Plugin 'OmniCppComplete'
 Plugin 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX'
-Plugin 'scrooloose/syntastic'
+"Plugin 'scrooloose/syntastic'
 Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-fugitive'
 Plugin 'moll/vim-bbye'
@@ -37,6 +37,8 @@ filetype plugin indent on
 let mapleader = "," 
 
 "-- CUSTOM MAPINGS {{{ -----------------------------------------------
+" shows the buffers 
+nmap <leader>bb :buffers<cr>
 " open a newterminal
 nmap <leader>nt :!newterm<cr><cr>
 " center current line on screen

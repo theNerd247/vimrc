@@ -8,8 +8,7 @@ ${1:v}${1/^.*?(-)?(>)?$/(?2::(?1:>:.))/}begin(), $1${1/^.*?(-)?(>)?$/(?2::(?1:>:
 endsnippet
 
 snippet cl "class .. (class)" t
-/**
- * @brief ${6:brief description}
+/** ${6:brief description}
  *
  * ${7:class details}
  *
@@ -68,6 +67,13 @@ endsnippet
 
 snippet template "templates" t
 template<typename ${1:t1}${2:,typename ${3:t2}}>
+endsnippet
+
+snippet foreach "boost foreach" t
+foreach(${1:ElementType}& ${2:e}, ${3:container})
+{
+	$0
+}
 endsnippet
 
 # vim:ft=snippets:
