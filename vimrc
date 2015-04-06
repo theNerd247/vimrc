@@ -20,7 +20,7 @@ Plugin 'xolox/vim-misc'
 Plugin 'bling/vim-airline'
 Plugin 'OmniCppComplete'
 Plugin 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX'
-Plugin 'scrooloose/syntastic'
+"Plugin 'scrooloose/syntastic'
 Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-fugitive'
 Plugin 'moll/vim-bbye'
@@ -118,6 +118,8 @@ let @f='0f*wif*i€kb€kb'
 "-- END CUSTOM MACROS }}} --------------------------------------------
 
 "-- PLUGIN CONFIG {{{ -------------------------------------------------
+" close the screen of nerdtree and tagbar
+nmap <leader><SPACE> :NERDTreeClose<cr> :TagbarClose<cr> :cclose<cr>
 " delimitMate mappings
 " alias for <S-Tab>
 imap <C-j> <S-Tab>

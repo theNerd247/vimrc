@@ -5,19 +5,19 @@
 ###########################
 # Sections and Paragraphs #
 ###########################
-snippet sec "Section" i
+snippet sec "Section" 
 ${1:Section Name}
 ${1/./=/g}
 $0
 endsnippet
 
-snippet ssec "Sub Section" i
+snippet h2 "Sub Section" 
 ${1:Section Name} 
 ${1/./-/g}
 $0
 endsnippet
 
-snippet sssec "SubSub Section" b
+snippet h3 "SubSub Section" 
 ### ${1:Section Name} ###
 $0
 endsnippet

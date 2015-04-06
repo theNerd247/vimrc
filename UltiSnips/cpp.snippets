@@ -70,5 +70,15 @@ snippet template "templates" t
 template<typename ${1:t1}${2:,typename ${3:t2}}>
 endsnippet
 
+snippet vec "std::vector" tw
+std::vector<${1:Type}>$0
+endsnippet
+
+snippet foreach "boost foreach" t
+foreach(${1:Type}& ${2:x}, ${3:xs})
+{
+	$0
+}
+endsnippet
 # vim:ft=snippets:
 
