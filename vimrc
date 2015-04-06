@@ -37,6 +37,8 @@ filetype plugin indent on
 let mapleader = "," 
 
 "-- CUSTOM MAPINGS {{{ -----------------------------------------------
+" shows the buffers 
+nmap <leader>bb :buffers<cr>
 " open a newterminal
 nmap <leader>nt :!newterm<cr><cr>
 " center current line on screen
