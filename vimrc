@@ -37,6 +37,8 @@ filetype plugin indent on
 let mapleader = "," 
 
 "-- CUSTOM MAPINGS {{{ -----------------------------------------------
+" set the current build path
+nmap <leader>sb :let $MAKEDIR=getcwd()<cr>
 " shows the buffers 
 nmap <leader>bb :buffers<cr>
 " open a newterminal
@@ -220,4 +222,7 @@ set keywordprg=firefox
 " set the number of lines to buffer the cursor with (above or below) when
 " scrolling
 set scrolloff=10
+
+" set the make program
+set makeprg=~/.vim/makeWrapper.sh
 "-- END MISC }}} -----------------------------------------------------
