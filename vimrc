@@ -175,7 +175,7 @@ set mouse=a
 syntax enable
 
 " set custom colors
-colorscheme default
+colorscheme monokai
 set background=dark "if set to monokai then comment this out
 
 " show the commands as I type them
