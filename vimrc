@@ -36,6 +36,8 @@ Plugin 'moll/vim-bbye'
 Plugin 'tpope/vim-surround'
 Plugin 'Command-T'
 Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'rhysd/vim-clang-format'
+"Plugin 'Cpp11-Syntax-Support'
 "Plugin 'bitc/vim-hdevtools'
 "-- END PLUGINS }}} --------------------------------------------------
 
@@ -45,8 +47,53 @@ filetype plugin indent on
 " set map leader for custom key-maps
 let mapleader = "," 
 
+"-- CUSTOM FUNCTIONS {{{ ---------------------------------------------
+function! EscapeString (string)
+  let string=a:string
+  " Escape regex characters
+  let string = escape(string, '^$.*\/~[]')
+  " Escape the line endings
+  let string = substitute(string, '\n', '\\n', 'g')
+  return string
+endfunction
+
+" Get the current visual block for search and replaces
+" This function passed the visual block through a string escape function
+" Based on this - http://stackoverflow.com/questions/676600/vim-replace-selected-text/677918#677918
+function! GetVisual() range
+  " Save the current register and clipboard
+  let reg_save = getreg('"')
+  let regtype_save = getregtype('"')
+  let cb_save = &clipboard
+  set clipboard&
+
+  " Put the current visual selection in the " register
+  normal! ""gvy
+  let selection = getreg('"')
+
+  " Put the saved registers and clipboards back
+  call setreg('"', reg_save, regtype_save)
+  let &clipboard = cb_save
+
+  "Escape any special characters in the selection
+  let escaped_selection = EscapeString(selection)
+
+  return escaped_selection
+endfunction
+"-- END CUSTOM FUNCTIONS }}} -----------------------------------------
+
 "-- CUSTOM MAPINGS {{{ -----------------------------------------------
-" set the current build path
+" open the output from the compiler
+nmap <leader>co :copen<cr><C-w><S-j>
+" close the output from the compiler
+nmap <leader>cc :cclose<cr>
+" replace selected text
+vmap <leader>s <Esc>:%s/<C-r>=GetVisual()<cr>/
+" open the compiler output
+nmap <leader>sc :copen<cr>
+" automagically set the current build path using NERDTree
+nmap <leader>nb cd:let $MAKEDIR=getcwd()<cr>Pcd
+" manually set the current build path
 nmap <leader>sb :let $MAKEDIR=getcwd()<cr>
 " shows the buffers 
 nmap <leader>bb :buffers<cr>
@@ -127,7 +174,7 @@ nmap <leader>bd :bd<cr>
 
 "-- CUSTOM MACROS {{{ ------------------------------------------------
 " format single line multiline c style comment to a multiline comment
-let @f='0f*wif*i€kb€kb'
+let @f='0f*wif*iÂ€kbÂ€kb'
 "-- END CUSTOM MACROS }}} --------------------------------------------
 
 "-- PLUGIN CONFIG {{{ -------------------------------------------------
@@ -205,7 +252,7 @@ set foldmethod=syntax
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
-"set expandtab
+set expandtab
 
 " show lines numbers
 set number
@@ -234,4 +281,5 @@ set scrolloff=10
 
 " set the make program
 set makeprg=~/.vim/makeWrapper.sh
+
 "-- END MISC }}} -----------------------------------------------------
