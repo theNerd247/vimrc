@@ -19,16 +19,20 @@ snippet => "Type constraint"
 endsnippet
 
 snippet def "Function definition"
+-- | ${5:desc}
 ${1:name} :: ${2:Type} -> ${3:Type}
+$1 ${4:args} = $0
 endsnippet
 
 snippet def[] "Function definition for list patterns"
+-- | ${5:desc}
 ${1:name} :: [${2:Type}] -> ${3:Type}
 $1 [] = ${4:undefined}
 $1 ${5:(x:xs)} = ${6:undefined}
 endsnippet
 
 snippet = "Function clause"
+-- | ${5:desc}
 ${1:name} ${2:pattern} = ${3:undefined}
 endsnippet
 
@@ -66,16 +70,30 @@ endsnippet
 
 snippet "inst(ance)?" "class isntance" tr
 instance ${1:Class} ${2:Type} where
-	$0
+  $0
 endsnippet
 
 snippet "mod(ule)?" "a new module" rt!b
-module ${1:Module Name} 
+{-|
+Module      : ${1:Name}
+Description : ${2:Short description}
+Copyright   : ${3:(c) Some Guy, 2013}
+License     : ${4:GPL-3}
+Maintainer  : ${5:sample@email.com}
+Stability   : ${6:experimental}
+Portability : ${7:POSIX}
+
+${8: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+no sea takimata sanctus est Lorem ipsum dolor sit amet.
+}
+-}
+
+module ${1:`!p snip.rv = os.path.splitext(snip.fn)[0] `}
 (
-$0
 )
 where
-
 endsnippet
 
 snippet "imp(ort)?" "import statement" rt
@@ -84,4 +102,15 @@ endsnippet
 
 snippet docb "haddock documentation" t
 -- | $1
+endsnippet
+
+snippet docl "inline haddock" t
+-- ^ $1
+endsnippet
+
+snippet rec "a new data record" t
+data ${1:Type} ${2: args} = $1 
+  {
+   ${3:record fields}
+	}
 endsnippet

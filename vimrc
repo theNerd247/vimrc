@@ -28,7 +28,7 @@ Plugin 'xolox/vim-easytags'
 Plugin 'xolox/vim-misc'
 Plugin 'bling/vim-airline'
 Plugin 'OmniCppComplete'
-Plugin 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX'
+"Plugin 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX'
 "Plugin 'scrooloose/syntastic'
 Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-fugitive'
@@ -37,8 +37,10 @@ Plugin 'tpope/vim-surround'
 Plugin 'Command-T'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'rhysd/vim-clang-format'
+Plugin 'matchit.zip'
 "Plugin 'Cpp11-Syntax-Support'
 "Plugin 'bitc/vim-hdevtools'
+Plugin 'Solarized'
 "-- END PLUGINS }}} --------------------------------------------------
 
 call vundle#end()
@@ -164,7 +166,7 @@ nmap <leader>a :'a,'bs/^/\t/g <cr>
 nmap <leader><S-A> :'a,'bs/^\t//g <cr>
 " add copy/paste functions for clipboard
 nmap <leader><S-P> "+p
-inoremap <C-v> <esc>"+p
+"inoremap <C-v> <esc>"+p
 vmap <leader><S-Y> "+y
 " buffer controls
 nmap <leader>bn :bn<cr>
@@ -229,12 +231,16 @@ set completeopt+=longest
 " set the mode of mouse
 set mouse=a
 
-" I like colors
+" I like syntax highlighting
 syntax enable
 
 " set custom colors
-colorscheme monokai
-set background=dark "if set to monokai then comment this out
+"use 16 colors
+set t_Co=16 
+"set this ONLY if you're using the solarized theme
+let g:solarized_termcolors=16
+set background=dark
+colorscheme solarized
 
 " show the commands as I type them
 set showcmd
@@ -250,9 +256,10 @@ set foldmethod=syntax
 
 " default tab size
 set tabstop=2
+" spaces to use for auto-indent
 set shiftwidth=2
+" number of spaces for a single tab
 set softtabstop=2
-set expandtab
 
 " show lines numbers
 set number
@@ -260,7 +267,7 @@ set number
 " set ctags path
 set tags+=/usr/include/tags
 
-" i don't like to scroll left so much
+" i don't like to scroll horizontally so much
 set textwidth=80
 
 " don't let the mouse interupt me typing

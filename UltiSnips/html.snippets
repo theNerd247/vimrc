@@ -183,7 +183,7 @@ snip.rv = (snip.basename or 'unnamed') + '_submit'
 endsnippet
 
 snippet h1 "XHTML <h1>"
-<h1 id="${1/[\w\d]+|( )/(?1:_:\L$0\E)/g}">${1}</h1>
+<h1>${1}</h1>
 endsnippet
 
 snippet head "XHTML <head>"
@@ -321,22 +321,22 @@ snippet ht4 "html4 template"
 </html>
 endsnippet
 
-snippet <! "comment" t
+snippet docl "comment" t
 <!-- ${1:txt} -->
 endsnippet
 # vim:ft=snippets:
 
-snippet docbl "docheader" t
+snippet docb "docheader" t
 <!-- ******************** ${1:doc} ******************** -->
 $0
 <!-- /$1 -->
 endsnippet
 
 snippet h2 "XHTML <h2>"
-<h2 id="${1/[\w\d]+|( )/(?1:_:\L$0\E)/g}">${1}</h2>
+<h2>${1}</h2>
 endsnippet
 
 snippet h3 "XHTML <h3>"
-<h3 id="${1/[\w\d]+|( )/(?1:_:\L$0\E)/g}">${1}</h3>
+<h3>${1}</h3>
 endsnippet
 

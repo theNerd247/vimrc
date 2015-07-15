@@ -117,9 +117,12 @@ snippet func "creates new function and documentation" t
 /** ${6:a brief description}
  * 
  * ${7:details}
- *
- *${3/void|.*?([\w]*)(,|$)/(?1: @param $1 - \\n *:)/g}
- * ${1/void|(.*)/(?1:@return $1 - :)/g}
+`!p 
+match3 = re.match("([\w]*)[\s]*(,[\s]*|$)",t[3])
+
+if match3.group(1):
+  returnType = match1.group(1)
+`
  *
  */
 ${0}${1:void} ${2:func_name}(${3:void});

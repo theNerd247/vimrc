@@ -15,7 +15,7 @@ endsnippet
 #################
 # GENERAL STUFF #
 #################
-snippet "b(egin)?" "begin{} / end{}" br
+snippet "begin" "begin{} / end{}" r
 \begin{${1:something}}
 	${0:${VISUAL}}
 \end{$1}
@@ -25,10 +25,16 @@ endsnippet
 # TABULARS, ARRAYS #
 ####################
 
-snippet tab
-\begin{${1:t}${1/(t)$|(a)$|(.*)/(?1:abular)(?2:rray)/}}{${2:c}}
-$0${2/((?<=.)c|l|r)|./(?1: & )/g}
-\end{$1${1/(t)$|(a)$|(.*)/(?1:abular)(?2:rray)/}}
+snippet tab "table" t
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{lll}
+	\toprule
+	\\\\ \midrule
+	\\\\ \bottomrule
+	\end{tabularx}
+	\caption{}
+	\label{tab:}
+\end{table}
 endsnippet
 
 ########################

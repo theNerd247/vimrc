@@ -1,0 +1,25 @@
+snippet docb "documentation bloxk" t
+`!p snip.rv = ((76-len(t[1]))/2)*'#'` ${1:Part name} `!p snip.rv = ((76-len(t[1]))/2)*'#'`
+
+$0
+
+`!p snip.rv = ((72-len(t[1]))/2)*'#'` End $1 `!p snip.rv = ((72-len(t[1]))/2)*'#'`
+endsnippet
+
+snippet func "new function" t
+function(${1:funcName})
+$0
+endfunction($1)
+endsnippet
+
+snippet foreach "" t
+foreach(${1:var} ${${2:list}})
+$0
+endforeach($1)
+endsnippet
+
+snippet if "" t
+if(${1:expr})
+$0
+endif($1)
+endsnippet
