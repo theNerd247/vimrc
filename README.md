@@ -8,6 +8,11 @@ Installing
 
     echo 'vimnrd="vim -u /path/to/cloned/repo/vimrc' > ~/.bash_aliases
 
-3. install the plugins 
+3. symlink the vundle directory
+
+    cd vundle/
+    ln -s ../Vundle.vim/ 
+
+4. install the plugins 
 
     vimnrd +PluginInstall
