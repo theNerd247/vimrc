@@ -89,7 +89,6 @@ ${0}
 % section $2 (end)
 endsnippet
 
-
 snippet sub "Subsection" b
 \subsection{${1:subsection name}}
 \label{sub:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/g}}}
@@ -158,4 +157,11 @@ snippet subfile "subfile document header" t
 $0
 \end{document}
 endsnippet
+
+snippet use "use package" 
+\usepackage{$0}
+endsnippet
+
 # vim:ft=snippets:
+
+

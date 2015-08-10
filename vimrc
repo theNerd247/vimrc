@@ -11,12 +11,12 @@ set nocompatible
 filetype off
 
 " Vundle
+"-- PLUGINS {{{ ------------------------------------------------------
 set rtp+=~/.vim/vundle/Vundle.vim
 call vundle#begin('~/.vim/vundle/')
 
 Plugin 'gmarik/Vundle.vim'
 
-"-- PLUGINS {{{ ------------------------------------------------------
 Plugin 'vim-scripts/autocomplpop'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Raimondi/delimitMate'
@@ -40,10 +40,12 @@ Plugin 'rhysd/vim-clang-format'
 Plugin 'matchit.zip'
 "Plugin 'Cpp11-Syntax-Support'
 "Plugin 'bitc/vim-hdevtools'
-Plugin 'Solarized'
+Plugin 'altercation/vim-colors-solarized'
+"my fork of the solarized theme
+"Plugin 'theNerd247/vim-colors-solarized'
+call vundle#end()
 "-- END PLUGINS }}} --------------------------------------------------
 
-call vundle#end()
 filetype plugin indent on  
 
 " set map leader for custom key-maps
