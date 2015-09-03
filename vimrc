@@ -87,6 +87,10 @@ endfunction
 "-- END CUSTOM FUNCTIONS }}} -----------------------------------------
 
 "-- CUSTOM MAPINGS {{{ -----------------------------------------------
+" format the << to newlines
+nmap <leader>f< f<illl
+" format the , to newlines
+nmap <leader>f, f,illl
 " open the output from the compiler
 nmap <leader>co :copen<cr><C-w><S-j>
 " close the output from the compiler
