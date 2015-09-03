@@ -179,6 +179,7 @@ nmap <leader>bd :bd<cr>
 "-- CUSTOM MACROS {{{ ------------------------------------------------
 " format single line multiline c style comment to a multiline comment
 let @f='0f*wif*iÂ€kbÂ€kb'
+let @c=':vimgrep /^\(\(#\)\@!.\)*$/ %€kl€kl€kl€kl€kl€kl€kl€kl€kl€kl€kl€kl€kl'
 "-- END CUSTOM MACROS }}} --------------------------------------------
 
 "-- PLUGIN CONFIG {{{ -------------------------------------------------
