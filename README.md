@@ -1,3 +1,9 @@
+Requirements
+-----------
+ctags
+git 
+vim
+
 Installing 
 ----------
 1. clone the repo: 
