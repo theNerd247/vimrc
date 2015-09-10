@@ -1,3 +1,6 @@
 [submodule "/home/noah/.vim/bundle/clang_complete"]
 	path = /home/noah/.vim/bundle/clang_complete
 	url = git@github.com:Rip-Rip/clang_complete.git
+[submodule "Vundle.vim"]
+	path = Vundle.vim
+	url = ./Vundle.vim
