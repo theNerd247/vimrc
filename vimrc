@@ -106,7 +106,7 @@ nmap <leader>sb :let $MAKEDIR=getcwd()<cr>
 " shows the buffers 
 nmap <leader>bb :buffers<cr>
 " open a newterminal
-nmap <leader>nt :!newterm<cr><cr>
+nmap <leader>nt :!urxvt -cd "`pwd`" &<cr>
 " center current line on screen
 nmap <space> zz
 " run make
