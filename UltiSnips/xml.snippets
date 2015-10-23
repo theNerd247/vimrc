@@ -5,7 +5,11 @@ snippet ltag "oneline tag" t
 endsnippet
 
 snippet tag "new xml tag" t
-<${1:tag}>
+<${1:tag}${2: flag=...}>
 $0
 </$1>
+endsnippet
+
+snippet itag "inline tag" t
+<${1:tag}${2: flag=...}>$0</$1>
 endsnippet
