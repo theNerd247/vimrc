@@ -41,6 +41,7 @@ Plugin 'matchit.zip'
 "Plugin 'Cpp11-Syntax-Support'
 "Plugin 'bitc/vim-hdevtools'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'Chiel92/vim-autoformat'
 "my fork of the solarized theme
 "Plugin 'theNerd247/vim-colors-solarized'
 call vundle#end()
@@ -114,7 +115,7 @@ nmap <leader>m :make<cr>
 " the highlighted text with braces
 vmap <leader>b <esc>:'<,'>s/\%V\(\_.*\)\%V/{\r\1\r}/<cr>
 " fix indenting of a file (see :help =)
-nmap <leader>rf gg=G <C-o><C-o>
+nmap <leader>rf :Autoformat <cr>
 " vertical split
 nmap <leader>vs :vsp<CR>
 " horizontal split
@@ -171,7 +172,7 @@ nmap <leader>a :'a,'bs/^/\t/g <cr>
 " unindent a code block
 nmap <leader><S-A> :'a,'bs/^\t//g <cr>
 " add copy/paste functions for clipboard
-nmap <leader><S-P> "+p
+nmap <leader><S-P> :read !xclip -o <cr>
 "inoremap <C-v> <esc>"+p
 vmap <leader><S-Y> "+y
 " buffer controls
@@ -222,6 +223,11 @@ let g:easytags_file='~/.vim/tags'
 " use the tags files that are project specific
 set tags=.tags,./.tags,./tags,tags
 let g:easytags_dynamic_files=2
+
+" syntax formatter plugin
+let g:formatdef_custom_style_cpp = '"astyle"'
+let g:formatters_cpp = ['custom_style_cpp']
+"let g:autoformat_verbose = 1
 "-- END PLUGIN CONFIG }}} ---------------------------------------------
 
 "-- PRINTER {{{ ------------------------------------------------------
