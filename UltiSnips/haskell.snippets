@@ -97,7 +97,7 @@ where
 endsnippet
 
 snippet "imp(ort)?" "import statement" rt
-import ${1:qualified} ${2:Module}${1/qualified/as/g} 
+import ${1:qualified} ${2:Module}${1/qualified/ as/g} 
 endsnippet
 
 snippet docb "haddock documentation" t
@@ -113,4 +113,8 @@ data ${1:Type} ${2: args} = $1
   {
    ${3:record fields}
 	}
+endsnippet
+
+snippet lang "Language Extensions" !b
+{-#LANGUAGE $0 #-}
 endsnippet
