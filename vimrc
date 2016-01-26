@@ -135,7 +135,7 @@ nmap <leader>se :tabnew ~/.vimrc<cr>
 " shortcut to help screen in new tab
 nmap <leader>hh :tab help 
 "edit Ultisnips 
-nmap <leader>su :tabnew ~/.vim/vundle/UltiSnips/UltiSnips/ <cr>
+nmap <leader>su :tabnew ~/.vim/UltiSnips/ <cr>
 " comment out the marked lines 'a,'b
 "nmap <leader><S-C> 'a^O/*<ESC>:'a,'bs/^/ * /<cr>'b^o */<ESC>:nohlsearch<cr>
 "comment out a single line
@@ -225,8 +225,9 @@ set tags=.tags,./.tags,./tags,tags
 let g:easytags_dynamic_files=2
 
 " syntax formatter plugin
-let g:formatdef_custom_style_cpp = '"astyle"'
-let g:formatters_cpp = ['custom_style_cpp']
+let g:formatdef_custom_style_c = '"astyle"'
+let g:formatters_cpp = ['custom_style_c']
+let g:formatters_c   = ['custom_style_c']
 "let g:autoformat_verbose = 1
 "-- END PLUGIN CONFIG }}} ---------------------------------------------
 
