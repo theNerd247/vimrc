@@ -162,6 +162,16 @@ snippet use "use package"
 \usepackage{$0}
 endsnippet
 
+snippet fig "a figure"
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=\linewidth]{$1}
+	\end{center}
+	\caption{$2}
+	\label{fig:$3}
+\end{figure}
+endsnippet
+
 # vim:ft=snippets:
 
 
