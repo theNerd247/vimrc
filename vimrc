@@ -24,7 +24,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'rstacruz/sparkup'
 Plugin 'vim-scripts/UltiSnips'
 Plugin 'sheerun/vim-polyglot'
-Plugin 'xolox/vim-easytags'
+" Plugin 'xolox/vim-easytags'
 Plugin 'xolox/vim-misc'
 Plugin 'bling/vim-airline'
 Plugin 'OmniCppComplete'
@@ -42,6 +42,10 @@ Plugin 'matchit.zip'
 "Plugin 'bitc/vim-hdevtools'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'Chiel92/vim-autoformat'
+Plugin 'scrooloose/syntastic'
+Plugin 'eagletmt/ghcmod-vim'
+Plugin 'eagletmt/neco-ghc'
+Plugin 'Shougo/vimproc.vim'
 "my fork of the solarized theme
 "Plugin 'theNerd247/vim-colors-solarized'
 call vundle#end()
@@ -229,6 +233,12 @@ let g:formatdef_custom_style_c = '"astyle"'
 let g:formatters_cpp = ['custom_style_c']
 let g:formatters_c   = ['custom_style_c']
 "let g:autoformat_verbose = 1
+
+"syntastic
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
 "-- END PLUGIN CONFIG }}} ---------------------------------------------
 
 "-- PRINTER {{{ ------------------------------------------------------
