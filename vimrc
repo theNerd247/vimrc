@@ -1,57 +1,43 @@
-" set default 'runtimepath' (without ~/.vim folders)
-let &runtimepath = printf('%s/vimfiles,%s,%s/vimfiles/after', $VIM, $VIMRUNTIME, $VIM)
-
-" what is the name of the directory containing this file?
-let s:portable = expand('<sfile>:p:h')
-
 " add the directory to 'runtimepath'
-let &runtimepath = printf('%s,%s,%s/after', s:portable, &runtimepath, s:portable)
-
 set nocompatible
-filetype off
 
-" Vundle
+" vim-plug
 "-- PLUGINS {{{ ------------------------------------------------------
-set rtp+=~/.vim/vundle/Vundle.vim
-call vundle#begin('~/.vim/vundle/')
+call plug#begin('~/.vim/bundle')
 
-Plugin 'gmarik/Vundle.vim'
-
-Plugin 'vim-scripts/autocomplpop'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Raimondi/delimitMate'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'rstacruz/sparkup'
-Plugin 'vim-scripts/UltiSnips'
-Plugin 'sheerun/vim-polyglot'
-" Plugin 'xolox/vim-easytags'
-Plugin 'xolox/vim-misc'
-Plugin 'bling/vim-airline'
-Plugin 'OmniCppComplete'
-"Plugin 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX'
-"Plugin 'scrooloose/syntastic'
-Plugin 'majutsushi/tagbar'
-Plugin 'tpope/vim-fugitive'
-Plugin 'moll/vim-bbye'
-Plugin 'tpope/vim-surround'
-Plugin 'Command-T'
-Plugin 'octol/vim-cpp-enhanced-highlight'
-Plugin 'rhysd/vim-clang-format'
-Plugin 'matchit.zip'
-"Plugin 'Cpp11-Syntax-Support'
-"Plugin 'bitc/vim-hdevtools'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'Chiel92/vim-autoformat'
-Plugin 'scrooloose/syntastic'
-Plugin 'eagletmt/ghcmod-vim'
-Plugin 'eagletmt/neco-ghc'
-Plugin 'Shougo/vimproc.vim'
+Plug 'vim-scripts/autocomplpop'
+Plug 'scrooloose/nerdtree'
+Plug 'Raimondi/delimitMate'
+Plug 'scrooloose/nerdcommenter'
+Plug 'rstacruz/sparkup'
+Plug 'vim-scripts/UltiSnips'
+Plug 'sheerun/vim-polyglot'
+"Plug 'xolox/vim-easytags'
+Plug 'xolox/vim-misc'
+Plug 'bling/vim-airline'
+" Plug 'OmniCppComplete'
+"Plug 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX'
+Plug 'vim-syntastic/syntastic'
+Plug 'majutsushi/tagbar'
+Plug 'tpope/vim-fugitive'
+Plug 'moll/vim-bbye'
+Plug 'tpope/vim-surround'
+"Plug 'Command-T'
+Plug 'octol/vim-cpp-enhanced-highlight'
+" Plug 'rhysd/vim-clang-format'
+" Plug 'matchit.zip'
+"Plug 'Cpp11-Syntax-Support'
+"Plug 'bitc/vim-hdevtools'
+Plug 'altercation/vim-colors-solarized'
+Plug 'Chiel92/vim-autoformat'
+Plug 'ternjs/tern_for_vim'
+Plug 'kien/ctrlp.vim'
 "my fork of the solarized theme
 "Plugin 'theNerd247/vim-colors-solarized'
-call vundle#end()
-"-- END PLUGINS }}} --------------------------------------------------
 
-filetype plugin indent on  
+call plug#end()
+
+"-- END PLUGINS }}} --------------------------------------------------
 
 " set map leader for custom key-maps
 let mapleader = "," 
@@ -199,6 +185,7 @@ nmap <leader><SPACE> :NERDTreeClose<cr> :TagbarClose<cr> :cclose<cr>
 imap <C-j> <S-Tab>
 " show buffers and tabs in airline plugin
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#syntastic#enabled = 1
 
 "CommandT mappings
 nnoremap <Leader>? :CommandTFlush<cr>:CommandT<cr>
@@ -235,10 +222,16 @@ let g:formatters_c   = ['custom_style_c']
 "let g:autoformat_verbose = 1
 
 "syntastic
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 0
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_typescript_checkers = ['eslint']
 "-- END PLUGIN CONFIG }}} ---------------------------------------------
 
 "-- PRINTER {{{ ------------------------------------------------------
@@ -249,8 +242,8 @@ set pdev=BCMLaser
 
 "-- MISC {{{ ---------------------------------------------------------
 "omnicomplete options
-set omnifunc=syntaxcomplete#Complete
-set completeopt+=longest
+"set omnifunc=syntaxcomplete#Complete
+"set completeopt+=longest
 
 " set the mode of mouse
 set mouse=a
@@ -287,6 +280,7 @@ set softtabstop=2
 
 " show lines numbers
 set number
+set relativenumber
 
 " set ctags path
 set tags+=/usr/include/tags
